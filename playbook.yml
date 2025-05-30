@@ -1,31 +1,9 @@
 ---
-- name: Install and start Apache on Ubuntu
+- name: Example Ansible Playbook
   hosts: all
-  become: true
-
+  become: yes
   tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: yes
-
-    - name: Install Apache
+    - name: Ensure Apache is installed
       apt:
         name: apache2
         state: present
-
-    - name: Start and enable Apache service
-      systemd:
-        name: apache2
-        enabled: yes
-        state: started
-
-    - name: Create a custom index.html
-      copy:
-        dest: /var/www/html/index.html
-        content: |
-          <html>
-            <head><title>Harness + Ansible Demo</title></head>
-            <body>
-              <h1>Apache Installed via Ansible!</h1>
-            </body>
-          </html>
