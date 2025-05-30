@@ -1,5 +1,4 @@
 ---
 roles:
   - name: geerlingguy.apache
-    src: geerlingguy.apache
     version: 4.0.0
