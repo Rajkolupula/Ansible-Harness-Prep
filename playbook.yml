@@ -1,7 +1,10 @@
 ---
-- name: Example Ansible Playbook
+- name: Example Ansible Playbook for NGINX
   hosts: all
   become: true
+
+  vars:
+    nginx_listen_port: 8080
 
   pre_tasks:
     - name: Update apt cache
@@ -10,4 +13,5 @@
         cache_valid_time: 3600
 
   roles:
-    - geerlingguy.apache
+    - geerlingguy.nginx
+
