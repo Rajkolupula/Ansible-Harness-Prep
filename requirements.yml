@@ -1,4 +1,5 @@
 ---
 roles:
-  - name: geerlingguy.apache
-    version: 4.0.0
+  - name: geerlingguy.nginx
+    src: geerlingguy.nginx
+
